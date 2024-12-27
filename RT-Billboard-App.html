@@ -1,0 +1,694 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RT-Billboard-App</title>
+    <link rel="stylesheet" href="RT-Billboard-App.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <div class="mainContainer">
+      <div class="menu">
+        <ul class="nav">
+          <li class="nav-item Option">
+            <a
+              class="nav-link"
+              href="#"
+              style="color: black"
+              role="button"
+              data-bs-toggle="dropdown"
+              >Options</a
+            >
+            <ul class="dropdown-menu">
+              <li>
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  class="btn btn-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#myModal-option"
+                  >Setting</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- /////////////////////////////////////////////////////// -->
+      <!-- The Modal -Setting-->
+      <div class="modal" id="myModal-option">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Modal body -->
+            <div class="modal-body-option container">
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title_option">Options</h4>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  style="width: 12px; height: 12px"
+                ></button>
+              </div>
+              <div class="Setting_Content">
+                <div class="font_size">
+                  <span class="span_fontsize">Font Size:</span>
+                  <input
+                    type="number"
+                    id="value_font_size"
+                    max="100"
+                    step="0"
+                    onclick="func_Weight()"
+                  />
+                </div>
+                <!-- options -->
+                <div class="run_auto">
+                  <input type="checkbox" checked="checked" />
+                  <span class="Run_automatically_span"
+                    >Run automatically at system startup</span
+                  >
+                </div>
+
+                <div class="row_color">
+                  <span class="row_color_span1">Row Color 1:</span>
+                  <input
+                    type="color"
+                    id="favcolor"
+                    name="favcolor"
+                    value="#aa00ff"
+                  /><br /><br />
+                </div>
+                <div class="row_color_2">
+                  <span class="row_color_span2">Row Color 2:</span>
+                  <input
+                    type="color"
+                    id="favcolor"
+                    name="favcolor"
+                    value="#9e9e9e"
+                  /><br /><br />
+                </div>
+
+                <div class="text_font_color">
+                  <span class="text_font_color_span">Text Font Color:</span>
+                  <!-- <form action="/action_page.php"> -->
+
+                  <input
+                    type="color"
+                    id="favcolor"
+                    name="favcolor"
+                    value="#f9a825"
+                  /><br /><br />
+                  <!-- <input type="submit"> -->
+                  <!-- </form> -->
+                </div>
+
+                <div class="title_font_color">
+                  <span class="TitleFontColor_span">Title Font Color:</span>
+                  <input
+                    type="color"
+                    id="favcolor"
+                    name="favcolor"
+                    value="#000000"
+                  /><br /><br />
+                </div>
+                <div class="background">
+                  <span class="background_span">Background:</span>
+                  <input
+                    type="color"
+                    id="favcolor_background"
+                    name="favcolor"
+                    value="#fafafa"
+                  /><br /><br />
+                </div>
+                <div class="refresh_daily_14sec">
+                  <span class="refresh_daily_span"
+                    >Refresh Delay(secends):</span
+                  >
+                  <input
+                    type="number"
+                    id="refresh_daily_value"
+                    max="100"
+                    step="0"
+                    onclick="func_Weight()"
+                  />
+                </div>
+
+                <div class="security_password" style="border: none; width: 70%">
+                  <span style="width: 300px">Security Password</span>
+                  <input type="text" value="click Edit" disabled />
+                  <button
+                    type="button"
+                    class="btn_edit_security_password btn-light"
+                    data-bs-toggle="modal"
+                    data-bs-target="#myModal_ppc"
+                  >
+                    Edit
+                  </button>
+                </div>
+              </div>
+              <!-- options -->
+              <!-- Grid_Parameters -->
+              <span class="Title_Grid_Parameters">Grid Parameters</span>
+              <div class="Grid_Parameters">
+                <!-- //////////////////gride_1////////////// -->
+                <div class="gride_1">
+                  <span class="gride_1_span">Grid 1:</span>
+                  <div class="enabled">
+                    <span class="enabled_span">Enabled:</span>
+                    <input
+                      type="checkbox"
+                      checked="checked"
+                      class="checkbox_enabled"
+                    />
+                  </div>
+                  <div class="category">
+                    <span class="category_span">Category</span>
+                    <select name="subject" id="Category_dropdown_sectionone">
+                      <option value="1">Limo</option>
+                      <option value="2" selected="selected">Taxi</option>
+                    </select>
+                  </div>
+                  <div id="zoon">
+                    <span class="zoon_span">Zone</span>
+                    <select name="subject" id="zoon_dropdown_grid_one">
+                      <!-- <option class="zone_grid_one_dropdown_option"  >1</option> -->
+                    </select>
+                  </div>
+                  <div class="caption">
+                    <span class="caption_grid_span">Caption</span>
+                    <label for="" class="lable_caption">Grid 1 Caption</label>
+                  </div>
+                </div>
+                <!-- ///////////////////////////gride_2////////////////////// -->
+                <div class="gride_2">
+                  <div class="gride_1">
+                    <span class="gride_1_span">Grid 2:</span>
+                    <div class="enabled">
+                      <span class="enabled_span">Enabled:</span>
+                      <input
+                        type="checkbox"
+                        checked="checked"
+                        class="checkbox_enabled"
+                      />
+                    </div>
+                    <div class="category">
+                      <span class="category_span">Category</span>
+
+                      <select name="subject" id="Category_dropdown_sectiontwo">
+                        <option value="" selected="selected">Limo</option>
+                        <option value="" selected="selected">Taxi</option>
+                      </select>
+                    </div>
+                    <div class="zoon">
+                      <span class="zoon_span">Zone</span>
+
+                      <select name="subject" id="zoon_dropdown_grid_two">
+                        <!-- <option value="" selected="selected">Zone-1</option> -->
+                      </select>
+                    </div>
+                    <div class="caption">
+                      <span class="caption_grid_span">Caption</span>
+                      <label for="" class="lable_caption">Grid 2 Caption</label>
+                    </div>
+                  </div>
+                </div>
+                <!-- //////////////////////Grid 3///////////////// -->
+                <div class="gride_3">
+                  <div class="gride_1">
+                    <span class="gride_1_span">Grid 3:</span>
+                    <div class="enabled">
+                      <span class="enabled_span">Enabled:</span>
+                      <input
+                        type="checkbox"
+                        checked="checked"
+                        class="checkbox_enabled"
+                      />
+                    </div>
+                    <div class="category">
+                      <span class="category_span">Category</span>
+
+                      <select
+                        name="subject"
+                        id="Category_dropdown_sectionthere"
+                      >
+                        <option value="" selected="selected">Limo</option>
+                        <option value="" selected="selected">Taxi</option>
+                      </select>
+                    </div>
+                    <div class="zoon">
+                      <span class="zoon_span">Zone</span>
+
+                      <select name="subject" id="zoon_dropdown_grid_there">
+                        <!-- <option value="" selected="selected">Zone-1</option> -->
+                      </select>
+                    </div>
+                    <div class="caption">
+                      <span class="caption_grid_span">Caption</span>
+                      <label for="" class="lable_caption">Grid 3 Caption</label>
+                    </div>
+                  </div>
+                </div>
+                <!-- ///////////////////////////Grid 4///////////////// -->
+                <div class="gride_4">
+                  <div class="gride_1">
+                    <span class="gride_1_span">Grid 4:</span>
+                    <div class="enabled">
+                      <span class="enabled_span">Enabled:</span>
+                      <input
+                        type="checkbox"
+                        checked="checked"
+                        class="checkbox_enabled"
+                      />
+                    </div>
+                    <div class="category">
+                      <span class="category_span">Category</span>
+
+                      <select name="subject" id="Category_dropdown_sectionfour">
+                        <option value="" selected="selected">Limo</option>
+                        <option value="" selected="selected">Taxi</option>
+                      </select>
+                    </div>
+                    <div class="zoon">
+                      <span class="zoon_span">Zone</span>
+
+                      <select name="subject" id="zoon_dropdown_grid_four">
+                        <!-- <option value="" selected="selected">Zone-1</option> -->
+                      </select>
+                    </div>
+                    <div class="caption">
+                      <span class="caption_grid_span">Caption</span>
+                      <label for="" class="lable_caption">Grid 4 Caption</label>
+                    </div>
+                  </div>
+                </div>
+                <!-- ///////////////////////////////////////////////////// -->
+              </div>
+              <!-- Grid_Parameters -->
+              <!-- Message_Parameters -->
+              <span class="Title_Message_Parameters">Message Parameters</span>
+              <div class="Message_Parameters">
+                <div class="section_left">
+                  <div>
+                    <span class="span_motion">Motion</span>
+                    <select name="subject" id="motion_dropdown">
+                      <option value="" selected="selected">Fixed</option>
+                      <option value="" selected="selected">Moving</option>
+                    </select>
+                  </div>
+                  <div>
+                    <span class="span_display">Display</span>
+                    <select name="subject" id="display_dropdown">
+                      <option value="" selected="selected">Simple</option>
+                      <option value="" selected="selected">Flashing</option>
+                    </select>
+                  </div>
+                  <div>
+                    <span class="span_background_color">Background_color</span>
+                    <input
+                      type="color"
+                      id="favcolor_background_color"
+                      name="favcolor"
+                      value="#2a3eb1"
+                    /><br /><br />
+                  </div>
+                  <div>
+                    <span class="span_text_color">Text_color</span>
+                    <input
+                      type="color"
+                      id="favcolor_text_color"
+                      name="favcolor"
+                      value="#f5f5f5"
+                    /><br /><br />
+                  </div>
+                </div>
+                <div class="section_right">
+                  <div>
+                    <span class="span_motion_speed">Motion speed</span>
+                    <select name="subject" id="motion_speed_dropdown">
+                      <option value="" selected="selected">Slow</option>
+                      <option value="" selected="selected">Normal</option>
+                      <option value="" selected="selected">Fast</option>
+                    </select>
+                  </div>
+                  <div>
+                    <span class="span_location">Location</span>
+                    <select name="subject" id="location_dropdown">
+                      <option value="" selected="selected">Top</option>
+                      <option value="" selected="selected">Bottom</option>
+                    </select>
+                  </div>
+                  <div>
+                    <span class="span_font_size">Font size</span>
+                    <input
+                      type="number"
+                      id="value_font_size"
+                      max="100"
+                      step="0"
+                      onclick="func_Weight()"
+                    />
+                  </div>
+                  <div>
+                    <span class="span_flashing_text_color"
+                      >Flashing text color</span
+                    >
+                    <input
+                      type="color"
+                      id="favcolor_flashing_text_color"
+                      name="favcolor"
+                      value="#2a3eb1"
+                    /><br /><br />
+                  </div>
+                </div>
+              </div>
+              <!-- Message_Parameters -->
+              <!-- Server_Parameters -->
+              <span class="Title_Server_Parameters">Server </span>
+              <div class="Server_Parameters">
+                <div class="server_url">
+                  <span class="server_url_span">ServerURL :</span>
+                  <input
+                    type="text"
+                    value="https://apippc.cvtasystems.com"
+                    class="server_url_input"
+                  />
+                </div>
+                <!-- <div class="ppc_url">
+                  <span class="ppc_url_span">PPC URL :</span>
+                  <input
+                    type="text"
+                    value="click Edit to view address"
+                    disabled
+                    class="ppc_url_input"
+                  />
+                  <button
+                    type="button"
+                    class="btn_ppc_url btn-light"
+                    data-bs-toggle="modal"
+                    data-bs-target="#myModal_ppc_edit"
+                  >
+                    Edit
+                  </button>
+                </div> -->
+              </div>
+              <!-- Server_Parameters -->
+              <!-- Btn-Close_Apply -->
+              <div class="Btn-Close_Apply">
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn_close"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button
+                    type="button"
+                    class="btn_apply"
+                    data-bs-dismiss="modal"
+                  >
+                    Apply
+                  </button>
+                </div>
+              </div>
+              <!-- Btn-Close_Apply -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /////////////////////////////////////////////////////// -->
+      <!-- The Modal PPC -->
+      <div class="modal" id="myModal_ppc">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Password</h4>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body-ppc-input">
+              <label for="pass_ppc">Password</label>
+              <input
+                type="password"
+                name="pass_ppc"
+                placeholder="Enter Password"
+                class="modal-body-ppc-input-value"
+              />
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button
+                type="button "
+                class="btn btn-danger-ppc btn-danger"
+                data-bs-dismiss="modal"
+              >
+                Ok
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /////////////////////////////////////////// -->
+      <!-- /////////////////////////////////////////////////////// -->
+      <!-- The Modal PPC EDIT SETTING-->
+      <div class="modal" id="myModal_ppc_edit">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Password</h4>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body-ppc-input">
+              <label for="pass_ppc">Password</label>
+              <input
+                type="password"
+                name="pass_ppc"
+                placeholder="Enter Password"
+                class="modal-body-ppc-edit-input-value"
+              />
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button
+                type="button "
+                class="btn btn-danger-ppc btn-danger"
+                data-bs-dismiss="modal"
+              >
+                Ok
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //////////////////////////The Modal PPC EDIT SETTING///////////////// -->
+      <!-- The Modal PROD -->
+      <div class="modal" id="myModal_prod">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Password</h4>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body-prod-input">
+              <label for="pass_PROD">Password</label>
+              <input
+                type="password"
+                name="pass_prod"
+                placeholder="Enter Password"
+              />
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-danger-prod btn-danger"
+                data-bs-dismiss="modal"
+              >
+                Ok
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /////////////////////////////////////////////////////// -->
+      <!-- The Modal Security_password -->
+      <div class="modal" id="myModal_Security_password">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Password</h4>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+              ></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+              <label for="pass_PROD">Password</label>
+              <input type="password" name="pass_prod" />
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-danger"
+                data-bs-dismiss="modal"
+              >
+                Ok
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /////////////////////////////////////////////////////// -->
+      <!-- The Modal security_password -->
+      <!-- /////////////////////////////////////////////////////// -->
+
+      <div class="mainContent">
+        <!-- <div class="row"> -->
+        <!-- //////////////////////////////sectionOne////////////////////// -->
+        <div class="section_one col-sm-6">
+          <div class="Category_Caption">
+            <span class="Category_section_one">NONE</span>
+            <span class="Caption">Grid 1 Caption</span>
+          </div>
+
+          <div class="Vehicle_Status">
+            <span class="Vehicle">Vehicle No.</span>
+            <span class="Status">Status</span>
+          </div>
+          <div class="Vehicle_Status_Caption">
+            <div class="Vehicle_Caption_Grid_One">
+              <span class="Vehicle_Caption_Span_Grid_One"></span>
+            </div>
+            <div class="Status_Caption_G_One">
+              <span class="Status_Caption_Grid_One"></span>
+            </div>
+          </div>
+          <div class="loading_container_one">
+            <div class="loading spinner-border" role="status"></div>
+            <strong>loading data...</strong>
+          </div>
+        </div>
+        <!-- //////////////////////////////sectionOne////////////////////// -->
+
+        <!-- //////////////////////////////sectionThere////////////////////// -->
+
+        <div class="section_there col-sm-6">
+          <div class="Category_Caption">
+            <span class="Category_section_there">NONE</span>
+            <span class="Caption">Grid 3 Caption</span>
+          </div>
+
+          <div class="Vehicle_Status">
+            <span class="Vehicle">Vehicle No.</span>
+            <span class="Status">Status</span>
+          </div>
+          <div class="Vehicle_Status_Caption">
+            <div class="Vehicle_Caption_Grid_There">
+              <span class="Vehicle_Caption_Span_Grid_There"></span>
+            </div>
+            <div class="Status_Caption_G_There">
+              <span class="Status_Caption_Grid_There"></span>
+            </div>
+          </div>
+          <div class="loading_container_three">
+            <div class="loading spinner-border" role="status"></div>
+            <strong>loading data...</strong>
+          </div>
+        </div>
+        <!-- //////////////////////////////sectionThere////////////////////// -->
+        <!-- //////////////////////////////sectionTwo////////////////////// -->
+        <div class="section_two col-sm-6">
+          <div class="Category_Caption">
+            <span class="Category_section_two">NONE</span>
+            <span class="Caption">Grid 2 Caption</span>
+          </div>
+
+          <div class="Vehicle_Status">
+            <span class="Vehicle">Vehicle No.</span>
+            <span class="Status">Status</span>
+          </div>
+          <div class="Vehicle_Status_Caption">
+            <div class="Vehicle_Caption_Grid_Two">
+              <span class="Vehicle_Caption_Span_Grid_Two"></span>
+            </div>
+            <div class="Status_Caption_G_Two">
+              <span class="Status_Caption_Grid_Two"></span>
+            </div>
+          </div>
+          <!-- <span class="Erorr_Span_Gride_Two"></span> -->
+          <div class="loading_container_two">
+            <div class="loading spinner-border" role="status"></div>
+            <strong>loading data...</strong>
+          </div>
+        </div>
+        <!-- //////////////////////////////sectionTwo////////////////////// -->
+        <!-- //////////////////////////////sectionFour////////////////////// -->
+
+        <div class="section_four col-sm-6">
+          <div class="Category_Caption">
+            <span class="Category_section_four">NONE</span>
+            <span class="Caption">Grid 4 Caption</span>
+          </div>
+
+          <div class="Vehicle_Status">
+            <span class="Vehicle">Vehicle No.</span>
+            <span class="Status">Status</span>
+          </div>
+          <div class="Vehicle_Status_Caption">
+            <div class="Vehicle_Caption_Grid_Four">
+              <span class="Vehicle_Caption_Span_Grid_Four"></span>
+            </div>
+            <div class="Status_Caption_G_Four">
+              <span class="Status_Caption_Grid_Four"></span>
+            </div>
+          </div>
+          <div class="loading_container_four">
+            <div class="loading spinner-border" role="status"></div>
+            <strong>loading data...</strong>
+          </div>
+        </div>
+        <!-- //////////////////////////////sectionFour////////////////////// -->
+      </div>
+      <div class="billboard_Messages">
+        <div class="billboard_Messages_Span"></div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.5/axios.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./RT-Billboard-App.js"></script>
+  </body>
+</html>
